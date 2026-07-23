@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:450px;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 15px rgba(0,0,0,.2);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:25px;
+            color:#333;
+        }
+
+        input, textarea{
+            width:100%;
+            padding:12px;
+            margin-bottom:15px;
+            border:1px solid #ccc;
+            border-radius:6px;
+            font-size:16px;
+            outline:none;
+        }
+
+        input:focus,
+        textarea:focus{
+            border-color:#007bff;
+        }
+
+        textarea{
+            resize:none;
+            height:150px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            border:none;
+            background:#007bff;
+            color:white;
+            font-size:18px;
+            border-radius:6px;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>📧 Email Sender</h1>
+
+       <form action="/send" method="POST" enctype="multipart/form-data">
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Receiver Email"
+        required
+    >
+
+    <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        required
+    >
+
+    <textarea
+        name="message"
+        placeholder="Write your message..."
+        required
+    ></textarea>
+
+    <input
+        type="file"
+        name="attachment"
+    >
+
+    <button type="submit">
+        Send Email
+    </button>
+
+</form>
+
+    </div>
+
+</body>
+</html>
